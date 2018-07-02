@@ -1,0 +1,23 @@
+page-login {
+
+    ion-content {
+        .scroll-content { 
+            background-color: map-get($colors , primary );
+        }
+    }
+
+    .item {
+        background-color: map-get($colors , primary );
+    }
+
+    .logo {
+        font-size: 25vh;
+        margin-top: 50px;
+        margin-bottom:30px;
+    }
+
+    h1, h6 {
+        font-size: 1em;
+        color: white;
+    }
+}
