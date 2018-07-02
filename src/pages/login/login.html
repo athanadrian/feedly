@@ -9,19 +9,27 @@
 
 <ion-content padding>
   <ion-item text-center no-lines>
+    <ion-icon color="light" name="logo-rss" class="logo2"></ion-icon>
+    <ion-icon color="light" name="home" class="logo1"></ion-icon>
     <ion-icon color="light" name="logo-usd" class="logo"></ion-icon>
   </ion-item>
   <ion-item text-center no-lines>
     <h1>Feesdly</h1>
-    <h6>an App to watch my complex fees</h6>
+    <h6>an App for continuous feed my complex fees</h6>
   </ion-item>
 
-  <ion-grid>
-    <ion-row>
-      <ion-input></ion-input>
+  <ion-grid class="login-box">
+    <ion-row class="row-style">
+      <ion-icon color="primary" name="mail"></ion-icon>
+      <ion-input type="email" placeholder="your email"></ion-input>
+    </ion-row>
+    <ion-row class="row-style">
+      <ion-icon color="primary" name="key"></ion-icon>
+      <ion-input type="password" placeholder="your password"></ion-input>
     </ion-row>
     <ion-row>
-      <ion-input></ion-input>
+      <button ion-button outline block round color="light" class="sign-in">Sign in</button>
     </ion-row>
   </ion-grid>
+  <button ion-button clear block round color="light" class="sign-in">Don't have an account? Sign up</button>
 </ion-content>
