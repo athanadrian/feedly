@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-button icon-only clear>
+        <ion-icon color="light" name="md-log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Complex feed</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-row margin class="rowStyle">
+    <button ion-button icon-only color="primary" clear>
+      <ion-icon name="images"></ion-icon>
+    </button>
+    <ion-input type="text" placeholder="say something......."></ion-input>
+    <button ion-button icon-only color="primary" clear>
+      <ion-icon name="send"></ion-icon>
+    </button>
+  </ion-row>
+  <ion-card>
+    <ion-item-divider color="primary">
+      Atana
+    </ion-item-divider>
+    <ion-item text-wrap>
+      Since both an interface and a class define the structure of an object and can be used interchangeably in some cases, it’s
+      worth noting that if we need to share structural definition amongst various classes, we can define that structure in
+      an interface and then have each class implement that interface!
+    </ion-item>
+    <ion-row class="bottom-row">
+      <ion-col>
+        <button ion-button block icon-left icon-only small clear class="border-right">
+          <ion-icon name="thumbs-up"></ion-icon>
+          <small>12 Likes</small>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block icon-left icon-only small clear class="border-right">
+          <ion-icon name="text"></ion-icon>
+          <small>3 Comments</small>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block icon-left icon-only small clear>
+          <ion-icon name="ios-timer"></ion-icon>
+          <small>12 minutes ago</small>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

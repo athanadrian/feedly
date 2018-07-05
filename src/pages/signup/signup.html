@@ -1,7 +1,7 @@
-<ion-header hidden>
+<ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>login</ion-title>
+   
   </ion-navbar>
 
 </ion-header>
@@ -15,10 +15,14 @@
   </ion-item>
   <ion-item text-center no-lines>
     <h1>Feesdly</h1>
-    <h6>an App for continuous feed my complex fees</h6>
+    <h6>an App for continuous feed my complex news fees</h6>
   </ion-item>
 
-  <ion-grid class="login-box">
+  <ion-grid class="signup-box">
+    <ion-row class="row-style">
+      <ion-icon color="primary" name="person"></ion-icon>
+      <ion-input type="text" placeholder="your username" [(ngModel)]="appUser.username" ></ion-input>
+    </ion-row>
     <ion-row class="row-style">
       <ion-icon color="primary" name="mail"></ion-icon>
       <ion-input type="email" placeholder="your email" [(ngModel)]="appUser.email"></ion-input>
@@ -28,8 +32,8 @@
       <ion-input type="password" placeholder="your password" [(ngModel)]="appUser.password"></ion-input>
     </ion-row>
     <ion-row>
-      <button ion-button outline block round color="light" class="sign-in" (click)="login()">Sign in</button>
+      <button ion-button outline block round color="light" class="signup" (click)="register()">Sign up</button>
     </ion-row>
   </ion-grid>
-  <button ion-button clear block round color="light" class="sign-in" (click)="goToSignup()">Don't have an account? Sign up</button>
+  <button ion-button clear block round color="light" class="signup" (click)="goToLogin()">Already have an account? Log in</button>
 </ion-content>
