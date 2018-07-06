@@ -2,7 +2,7 @@
 
   <ion-navbar color="primary">
     <ion-buttons end>
-      <button ion-button icon-only clear>
+      <button ion-button icon-only clear (click)="logout()">
         <ion-icon color="light" name="md-log-out"></ion-icon>
       </button>
     </ion-buttons>
@@ -17,19 +17,22 @@
     <button ion-button icon-only color="primary" clear>
       <ion-icon name="images"></ion-icon>
     </button>
-    <ion-input type="text" placeholder="say something......."></ion-input>
-    <button ion-button icon-only color="primary" clear>
+    <ion-input type="text" placeholder="say something......." [(ngModel)]="post.text"></ion-input>
+    <button ion-button icon-only color="primary" clear (click)="makePost()">
       <ion-icon name="send"></ion-icon>
     </button>
   </ion-row>
-  <ion-card>
+
+  <ion-refresher (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card *ngFor="let post of posts">
     <ion-item-divider color="primary">
-      Atana
+      {{post.data().ownerName}} says
     </ion-item-divider>
     <ion-item text-wrap>
-      Since both an interface and a class define the structure of an object and can be used interchangeably in some cases, it’s
-      worth noting that if we need to share structural definition amongst various classes, we can define that structure in
-      an interface and then have each class implement that interface!
+      {{post.data().text}}
     </ion-item>
     <ion-row class="bottom-row">
       <ion-col>
@@ -47,9 +50,12 @@
       <ion-col>
         <button ion-button block icon-left icon-only small clear>
           <ion-icon name="ios-timer"></ion-icon>
-          <small>12 minutes ago</small>
+          <small>{{ countTimeAgo(post.data().created?.toDate()) }} ago</small>
         </button>
       </ion-col>
     </ion-row>
   </ion-card>
+  <ion-infinite-scroll (ionInfinite)="loadMorePosts($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

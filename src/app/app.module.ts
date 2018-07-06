@@ -15,8 +15,13 @@ import { SignupPage } from './../pages/signup/signup';
 import { FeedPage } from './../pages/feed/feed';
 import { AuthProvider } from '../providers/auth/auth';
 import { NotificationProvider } from '../providers/notification/notification';
+import { PostsProvider } from '../providers/posts/posts';
+import { LocaleProvider } from '../providers/locale/locale';
 
 firebase.initializeApp(config.firebase);
+firebase.firestore().settings({
+  timestampsInSnapshots: true
+});
 
 @NgModule({
   declarations: [
@@ -41,9 +46,11 @@ firebase.initializeApp(config.firebase);
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthProvider,
-    NotificationProvider
+    NotificationProvider,
+    PostsProvider,
+    LocaleProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }

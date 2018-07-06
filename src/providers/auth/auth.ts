@@ -46,5 +46,10 @@ export class AuthProvider {
       })
   }
 
+    signout() {
+      firebase.auth().signOut().then(()=>{
+        console.log('login out....');
+      });
+    }
 
 }

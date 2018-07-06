@@ -5,8 +5,8 @@ import { ToastController, AlertController } from 'ionic-angular';
 export class NotificationProvider {
 
   constructor(
-    public toastCtrl: ToastController,
-    public alertCtrl: AlertController) {
+    private toastCtrl: ToastController,
+    private alertCtrl: AlertController) {
   }
 
   createAlert(title: string, message: string, handler: any) {
